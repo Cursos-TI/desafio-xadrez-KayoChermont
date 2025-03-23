@@ -1,39 +1,45 @@
 #include <stdio.h>
 
+void moverTorre(int casas) {
+  if (casas > 0) { // se o número de casas for maior que zero imprime direita
+      printf("Diretia\n");
+      moverTorre(casas - 1); //cahama a funcao recursividade removendo um de casas
+  }
+}
+void moverRainha(int casas){
+  if (casas > 0) { // se o número de casas for maior que zero imprime esquerda
+      printf("Esquerda\n");
+      moverRainha(casas - 1); //cahama a funcao recursividade removendo um de casas
+  }
+}
+void moverBispo(int casas){
+  if (casas > 0){ 
+   if (casas % 2 ==0) { // se número de casas for par imprime direita
+      printf("Direita\n");
+   } else { //se o número de casas for impar imprime cima
+      printf("Cima\n");
+   }
+   moverBispo(casas - 1); //cahama a funcao recursividade removendo um de casas
+  }
+}
+
  int main(){
 
-    int torre = 1, bispo, rainha = 1, cavalo = 1;
+    moverTorre(5);
 
-    printf("Torre anda cinco casas acima: \n");
+    int cavalo = 1;
 
-    while (torre <=5)
-    {
-        printf("Cima\n");
-      torre++;
-    }
+    printf("Torre anda 5 casas direita: \n");
 
-    printf("\nRainha anda 7 casa a esquerda: \n");
+    moverTorre(5);
 
-    do
-    {
-      if (rainha <= 7)
-      {
-        printf("Esquerda\n");
-      }
-      rainha++;
+    printf("\nRainha anda 8 casa a esquerda: \n");
 
-    } while (rainha <= 7);
+    moverRainha(8);
 
-    printf("\nBispo anda 3 casas na diagonal pra cima a direita: \n");
+    printf("\nBispo anda 5 casas na diagonal pra cima a direita: \n");
     
-    for (bispo = 1; bispo <= 6; bispo++)
-    {
-      if (bispo % 2 == 0){
-        printf("Cima\n");
-      } else {
-        printf("Direita\n");
-      }  
-    }
+    moverBispo(10);
 
     printf("\nCavalo movimenta-se em L para cima a direita: \n");
 
