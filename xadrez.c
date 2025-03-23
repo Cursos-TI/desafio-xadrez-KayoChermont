@@ -2,7 +2,7 @@
 
  int main(){
 
-    int torre = 1, bispo, rainha = 1;
+    int torre = 1, bispo, rainha = 1, cavalo = 1;
 
     printf("Torre anda cinco casas acima: \n");
 
@@ -33,6 +33,16 @@
       } else {
         printf("Direita\n");
       }  
+    }
+
+    printf("\nCavalo movimenta-se em L para cima a direita: \n");
+
+    while (cavalo--)
+    {
+        for (int i = 0; i < 2; i++){
+            printf("Cima\n");
+        }
+        printf("Direita \n");
     }
 
     return 0;
